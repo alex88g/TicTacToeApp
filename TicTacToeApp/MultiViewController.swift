@@ -9,12 +9,17 @@ import UIKit
 
 class MultiViewController: UIViewController {
     
+    // Enum grupp av värden som är relaterade dessutom renare kod
     enum Turn {
         case Nought
         case Cross
     }
     
+    
+    @IBOutlet weak var player2ScoreLbl: UILabel!
+    @IBOutlet weak var player1ScoreLbl: UILabel!
     @IBOutlet weak var turnLabel: UILabel!
+    
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
     @IBOutlet weak var a3: UIButton!
@@ -36,60 +41,93 @@ class MultiViewController: UIViewController {
     var firstTurn = Turn.Cross
     var currentTurn = Turn.Cross
     
-    var NOUGHT = "0"
-    var CROSS = "X"
-    var board = [UIButton]()
+    var Nought = "0"
+    var Cross = "X"
+    var square = [UIButton]()
     
     var noughtsScore = 0
     var crossesScore = 0
     
+    var Player1 : Int = 0
+    var Player2 : Int = 0
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initBoard()
+        initSquare()
         // Do any additional setup after loading the view.
     }
     
-    func initBoard()
+    func initSquare()
     {
-        board.append(a1)
-        board.append(a2)
-        board.append(a3)
-        board.append(b1)
-        board.append(b2)
-        board.append(b3)
-        board.append(c1)
-        board.append(c2)
-        board.append(c3)
+        square.append(a1)
+        square.append(a2)
+        square.append(a3)
+        square.append(b1)
+        square.append(b2)
+        square.append(b3)
+        square.append(c1)
+        square.append(c2)
+        square.append(c3)
         
     }
     
-    @IBAction func boardTapAction(_ sender: UIButton) {
+    @IBAction func squareClicked(_ sender: UIButton) {
+    
+    
    
-        addToBoard(sender)
+        makeChoice(sender)
         
-        if checkWins(CROSS) {
+        if checkWin(Cross) {
             
             crossesScore += 1
-            resultAlert(title: "Crosses Win!")
+            result(title: "Crosses Win!")
             
+            player1ScoreLbl.text = String((Int(player1ScoreLbl.text ?? "0") ?? 0) + 1)
+            
+           
+            
+            var arrayPlayer1 = UserDefaults.standard.object(forKey:"ScorePlayer1") as? Int
+            
+            Player1 = arrayPlayer1!
+            Player1 = Player1 + 1
+                  
+                   UserDefaults.standard.set(Player1, forKey: "ScorePlayer1")
+                   
+                   
+                    
+                    NSLog("\(arrayPlayer1)", CGFloat.pi)
            
         }
         
-        if checkWins(NOUGHT) {
+        if checkWin(Nought) {
             
             noughtsScore += 1
-            resultAlert(title: "Noughts Win!")
-           
-        }
-        if(loadBoard()) {
+            result(title: "Noughts Win!")
             
-            resultAlert(title: "Draw")
+            player2ScoreLbl.text = String((Int(player2ScoreLbl.text ?? "0") ?? 0) + 1)
+            
+            
+            var arrayPlayer2 = UserDefaults.standard.object(forKey:"ScorePlayer2") as? Int
+            
+            Player2 = arrayPlayer2!
+            
+            Player2 = Player2 + 1
+           
+            UserDefaults.standard.set(Player2, forKey: "ScorePlayer2")
+            
+            
+           
+            NSLog("\(arrayPlayer2)", CGFloat.pi)
+        }
+        if(loadSquare()) {
+            
+            result(title: "Draw")
             
         }
     }
     
-    func checkWins(_ s :String) -> Bool {
+    func checkWin(_ s :String) -> Bool {
         
         // Horisontal Victory
         if box(a1, s) && box(a2, s) && box(a3, s) {
@@ -114,7 +152,7 @@ class MultiViewController: UIViewController {
         return true
 }
     
-    if box(a2, s) && box(b2, s) && box(c3, s) {
+    if box(a2, s) && box(b2, s) && box(c2, s) {
         
         return true
 }
@@ -143,20 +181,20 @@ class MultiViewController: UIViewController {
         return button.title(for: .normal) == symbol
     }
     
-    func resultAlert(title: String) {
+    func result(title: String) {
         
         let message = "\nNoughts" + String(noughtsScore) + "\n\nCrosses " + String(crossesScore)
         let ac = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
-            self.resetBoard()
+            self.resetGame()
             }))
             self.present(ac, animated: true)
         
     }
     
-    func resetBoard() {
+    func resetGame() {
         
-        for button in board {
+        for button in square {
             
             button.setTitle(nil, for: .normal)
             button.isEnabled = true
@@ -164,20 +202,20 @@ class MultiViewController: UIViewController {
         if firstTurn == Turn.Nought {
             
             firstTurn = Turn.Cross
-            turnLabel.text = CROSS
+            turnLabel.text = Cross
         }
         else if firstTurn == Turn.Cross {
             
             firstTurn = Turn.Nought
-            turnLabel.text = NOUGHT
+            turnLabel.text = Nought
             
         }
     currentTurn = firstTurn
 }
  
-    func loadBoard() -> Bool {
+    func loadSquare() -> Bool {
        
-        for button in board {
+        for button in square {
             
             if button.title(for: .normal) == nil {
                 
@@ -188,21 +226,21 @@ class MultiViewController: UIViewController {
         return true
 }
     
-    func addToBoard(_ sender: UIButton) {
+    func makeChoice(_ sender: UIButton) {
         
         if(sender.title(for: .normal) == nil) {
             if(currentTurn == Turn.Nought) {
                 
-                sender.setTitle(NOUGHT, for: .normal)
+                sender.setTitle(Nought, for: .normal)
                 currentTurn = Turn.Cross
-                turnLabel.text = CROSS
+                turnLabel.text = Cross
             }
             
             else if(currentTurn == Turn.Cross) {
                 
-                    sender.setTitle(CROSS, for: .normal)
+                    sender.setTitle(Cross, for: .normal)
                     currentTurn = Turn.Nought
-                    turnLabel.text = NOUGHT                }
+                    turnLabel.text = Nought                }
                 
             }
             

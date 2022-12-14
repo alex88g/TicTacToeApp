@@ -19,14 +19,12 @@
 		F00617D1293AC6760073BE68 /* tictacback.png in Resources */ = {isa = PBXBuildFile; fileRef = F00617D0293AC6760073BE68 /* tictacback.png */; };
 		F020F27A293E1FE3002B4EC5 /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020F279293E1FE3002B4EC5 /* SingleViewController.swift */; };
 		F020F284293E4E1E002B4EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F020F283293E4E1E002B4EC5 /* Main.storyboard */; };
-		F020F2C8293F5DEA002B4EC5 /* xlogo-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F020F2C7293F5DE9002B4EC5 /* xlogo-removebg-preview.png */; };
-		F020F2CA293F5DF6002B4EC5 /* o.logo-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F020F2C9293F5DF5002B4EC5 /* o.logo-removebg-preview.png */; };
 		F020F2CE293F7391002B4EC5 /* logo.tictactoe-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F020F2CD293F7391002B4EC5 /* logo.tictactoe-removebg-preview.png */; };
 		F020F2D0293F849F002B4EC5 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020F2CF293F849F002B4EC5 /* MultiViewController.swift */; };
-		F084E4AF293FBE000023CA3D /* tictactoeboard-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F084E4AE293FBE000023CA3D /* tictactoeboard-removebg-preview.png */; };
 		F084E4B1293FBEB10023CA3D /* exit-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F084E4B0293FBEB10023CA3D /* exit-removebg-preview.png */; };
 		F0FEF4112943582D000F0A00 /* 0-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FEF4102943582D000F0A00 /* 0-removebg-preview.png */; };
 		F0FEF41329435838000F0A00 /* x-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FEF41229435838000F0A00 /* x-removebg-preview.png */; };
+		F0FEF4912948C198000F0A00 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF4902948C198000F0A00 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,14 +61,12 @@
 		F00617D0293AC6760073BE68 /* tictacback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tictacback.png; path = ../../../../Downloads/tictacback.png; sourceTree = "<group>"; };
 		F020F279293E1FE3002B4EC5 /* SingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewController.swift; sourceTree = "<group>"; };
 		F020F283293E4E1E002B4EC5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F020F2C7293F5DE9002B4EC5 /* xlogo-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "xlogo-removebg-preview.png"; path = "../../../../Downloads/xlogo-removebg-preview.png"; sourceTree = "<group>"; };
-		F020F2C9293F5DF5002B4EC5 /* o.logo-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "o.logo-removebg-preview.png"; path = "../../../../Downloads/o.logo-removebg-preview.png"; sourceTree = "<group>"; };
 		F020F2CD293F7391002B4EC5 /* logo.tictactoe-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo.tictactoe-removebg-preview.png"; path = "../../../../Downloads/logo.tictactoe-removebg-preview.png"; sourceTree = "<group>"; };
 		F020F2CF293F849F002B4EC5 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
-		F084E4AE293FBE000023CA3D /* tictactoeboard-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tictactoeboard-removebg-preview.png"; path = "../../../../Downloads/tictactoeboard-removebg-preview.png"; sourceTree = "<group>"; };
 		F084E4B0293FBEB10023CA3D /* exit-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-removebg-preview.png"; path = "../../../../Downloads/exit-removebg-preview.png"; sourceTree = "<group>"; };
 		F0FEF4102943582D000F0A00 /* 0-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "0-removebg-preview.png"; path = "../../../../Downloads/0-removebg-preview.png"; sourceTree = "<group>"; };
 		F0FEF41229435838000F0A00 /* x-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-removebg-preview.png"; path = "../../../../Downloads/x-removebg-preview.png"; sourceTree = "<group>"; };
+		F0FEF4902948C198000F0A00 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,15 +122,13 @@
 				F00617A0293AC3D50073BE68 /* SceneDelegate.swift */,
 				F00617A2293AC3D50073BE68 /* ViewController.swift */,
 				F020F283293E4E1E002B4EC5 /* Main.storyboard */,
+				F0FEF4902948C198000F0A00 /* ResultViewController.swift */,
 				F020F2CF293F849F002B4EC5 /* MultiViewController.swift */,
 				F020F279293E1FE3002B4EC5 /* SingleViewController.swift */,
 				F00617A7293AC3DF0073BE68 /* Assets.xcassets */,
 				F0FEF41229435838000F0A00 /* x-removebg-preview.png */,
 				F0FEF4102943582D000F0A00 /* 0-removebg-preview.png */,
-				F084E4AE293FBE000023CA3D /* tictactoeboard-removebg-preview.png */,
 				F084E4B0293FBEB10023CA3D /* exit-removebg-preview.png */,
-				F020F2C9293F5DF5002B4EC5 /* o.logo-removebg-preview.png */,
-				F020F2C7293F5DE9002B4EC5 /* xlogo-removebg-preview.png */,
 				F020F2CD293F7391002B4EC5 /* logo.tictactoe-removebg-preview.png */,
 				F00617D0293AC6760073BE68 /* tictacback.png */,
 				F00617CE293AC65C0073BE68 /* wood_bc.jpeg */,
@@ -273,10 +267,7 @@
 				F00617CF293AC65D0073BE68 /* wood_bc.jpeg in Resources */,
 				F00617A8293AC3DF0073BE68 /* Assets.xcassets in Resources */,
 				F0FEF4112943582D000F0A00 /* 0-removebg-preview.png in Resources */,
-				F020F2C8293F5DEA002B4EC5 /* xlogo-removebg-preview.png in Resources */,
-				F084E4AF293FBE000023CA3D /* tictactoeboard-removebg-preview.png in Resources */,
 				F020F2CE293F7391002B4EC5 /* logo.tictactoe-removebg-preview.png in Resources */,
-				F020F2CA293F5DF6002B4EC5 /* o.logo-removebg-preview.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +297,7 @@
 				F00617A3293AC3D50073BE68 /* ViewController.swift in Sources */,
 				F006179F293AC3D50073BE68 /* AppDelegate.swift in Sources */,
 				F00617A1293AC3D50073BE68 /* SceneDelegate.swift in Sources */,
+				F0FEF4912948C198000F0A00 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +469,7 @@
 				DEVELOPMENT_TEAM = V4BLJ44247;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TicTacToeApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -505,6 +498,7 @@
 				DEVELOPMENT_TEAM = V4BLJ44247;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TicTacToeApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -34,8 +34,14 @@ class SingleViewController: UIViewController {
     var playerTap: [Box] = []
     var computerTap: [Box] = []
     
-    //var firstTurn = Turn.Cross
-    //var currentTurn = Turn.Cross
+    var Player = 0
+    var Computer = 0
+    
+    
+    
+    
+    
+    
     
     
     
@@ -45,8 +51,8 @@ class SingleViewController: UIViewController {
         super.viewDidLoad()
         
         
-
-        // Do any additional setup after loading the view.
+        
+        // Ytterligare inställningar efter vyns laddning.
         
         
         playerNameLbl.text = playerName + ":"
@@ -61,10 +67,16 @@ class SingleViewController: UIViewController {
         createTap(on: box8, type: .eight)
         createTap(on: box9, type: .nine)
         
-    
+        
         
     }
     
+    
+    
+    
+
+    
+    // Enum grupp av värden som är relaterade dessutom renare kod
     enum Box: String, CaseIterable {
         case one, two, three, four, five, six, seven,eight, nine
         }
@@ -74,6 +86,9 @@ class SingleViewController: UIViewController {
         tap.name = box.rawValue
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tap)
+        
+       // NSLog("\(Player)", CGFloat.pi)
+       // print("\(Player)")
     }
     
     @objc func squareClicked(_ sender: UITapGestureRecognizer) {
@@ -126,13 +141,20 @@ class SingleViewController: UIViewController {
     
     func checkWin() {
         var correct = [[Box]]()
+       
+        // Horisontal Victory
+        
         let firstRow: [Box] = [.one, .two, .three]
         let secondRow: [Box] = [.four, .five, .six]
         let thirdRow: [Box] = [.seven, .eight, .nine]
+      
+        // Vertical Victory
         
-        let firstCol: [Box] = [.one, .two, .three]
-        let secondCol: [Box] = [.four, .five, .six]
-        let thirdCol: [Box] = [.seven, .eight, .nine]
+        let firstCol: [Box] = [.one, .four, .seven]
+        let secondCol: [Box] = [.two, .five, .eight]
+        let thirdCol: [Box] = [.three, .six, .nine]
+        
+        // Diagonal Victory
         
         let backwardSlash: [Box] = [.one, .five, .nine]
         let forwardSlash: [Box] = [.three, .five, .seven]
@@ -146,30 +168,91 @@ class SingleViewController: UIViewController {
         correct.append(backwardSlash)
         correct.append(forwardSlash)
         
+        
+        
+
+        
+        
         for valid in correct {
             let userMatch = playerTap.filter {valid.contains($0) }.count
             let computerMatch = computerTap.filter { valid.contains($0) }.count
+         
+            // let scoreKey = "scoreKey"
+            //To save the score:
+
+            //if highestScore > newScore {
+                    //let defaults = UserDefaults.standard
+                    //defaults.set(highestScore, forKey: scoreKey)
+           // }
+            //To read at the beginning
+
+                    //let defaults = UserDefaults.standard
+                    //highestScore = defaults.integer(forKey: scoreKey)
             
             if userMatch == valid.count {
                 playerScoreLbl.text = String((Int(playerScoreLbl.text ?? "0") ?? 0) + 1)
                
                
                 winLbl.text = "Player has won!"
+                //Player.text = computerScoreLbl
+              //  let array = playerTap.map{$0.rawValue}
                 
-                   resetGame()
+                
+                var array = UserDefaults.standard.object(forKey:"Score") as? Int
+                
+                Player = array!
+                
+                Player = Player + 1
+               
+                UserDefaults.standard.set(Player, forKey: "Score")
+                
+                
+
+                
+                
+//                NSLog("\(Player)", CGFloat.pi)
+//                NSLog("\(array)", CGFloat.pi)
+
+                
+                
+                
+                resetGame()
                 break
             } else if computerMatch == valid.count {
                 computerScoreLbl.text = String((Int(computerScoreLbl.text ?? "0") ?? 0) + 1)
+                
                 winLbl.text = "Computer has won!"
+              //  Computer.text = playerScoreLbl
+                
+                //UserDefaults.standard.set(computerTap, forKey: "Tap")
+                //let array = playerTap.map{$0.rawValue}
+                //UserDefaults.standard.set(Computer, forKey: "Score")
+                
+                var array2 = UserDefaults.standard.object(forKey:"ComputerScore") as? Int
+                
+                Computer = array2!
+                
+                Computer = Computer + 1
+               
+                UserDefaults.standard.set(Computer, forKey: "ComputerScore")
+                
+                
+
+                
+                
                 
                 resetGame()
                 break
             } else if computerTap.count + playerTap.count == 9 {
                 
-                winLbl.text = " Draw! "
+                winLbl.text = " Draw "
+                
+                
                 
                 resetGame()
                 break
+                
+                
                 
                 
             }
