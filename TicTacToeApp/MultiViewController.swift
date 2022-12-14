@@ -81,7 +81,7 @@ class MultiViewController: UIViewController {
         if checkWin(Cross) {
             
             crossesScore += 1
-            result(title: "Crosses Win!")
+            result(title: "Player1 Win!")
             
             player1ScoreLbl.text = String((Int(player1ScoreLbl.text ?? "0") ?? 0) + 1)
             
@@ -103,7 +103,7 @@ class MultiViewController: UIViewController {
         if checkWin(Nought) {
             
             noughtsScore += 1
-            result(title: "Noughts Win!")
+            result(title: "Player2 Win!")
             
             player2ScoreLbl.text = String((Int(player2ScoreLbl.text ?? "0") ?? 0) + 1)
             

@@ -20,13 +20,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    
+    @IBAction func multiBtn(_ sender: UIButton) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "multiPlayer") as! MultiViewController
+        controller.modalTransitionStyle = .flipHorizontal
+        //controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func singleBtn(_ sender: UIButton) {
         guard !nameField.text!.trimmingCharacters(in: .whitespaces).isEmpty else {return}
         
         let controller = storyboard?.instantiateViewController(withIdentifier: "singlePlayer") as! SingleViewController
         controller.playerName = nameField.text
         controller.modalTransitionStyle = .flipHorizontal
-        controller.modalPresentationStyle = .fullScreen
+        //controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
         
     }
@@ -42,7 +52,7 @@ class ViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "SingleViewController" {
+        if identifier == "SingleVC" {
             if nameField.text!.trimmingCharacters(in: .whitespaces).isEmpty {
                 return false
             }

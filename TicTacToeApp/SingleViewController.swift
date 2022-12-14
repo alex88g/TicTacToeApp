@@ -177,25 +177,15 @@ class SingleViewController: UIViewController {
             let userMatch = playerTap.filter {valid.contains($0) }.count
             let computerMatch = computerTap.filter { valid.contains($0) }.count
          
-            // let scoreKey = "scoreKey"
-            //To save the score:
-
-            //if highestScore > newScore {
-                    //let defaults = UserDefaults.standard
-                    //defaults.set(highestScore, forKey: scoreKey)
-           // }
-            //To read at the beginning
-
-                    //let defaults = UserDefaults.standard
-                    //highestScore = defaults.integer(forKey: scoreKey)
             
             if userMatch == valid.count {
                 playerScoreLbl.text = String((Int(playerScoreLbl.text ?? "0") ?? 0) + 1)
                
                
                 winLbl.text = "Player has won!"
+               
                 //Player.text = computerScoreLbl
-              //  let array = playerTap.map{$0.rawValue}
+                //let array = playerTap.map{$0.rawValue}
                 
                 
                 var array = UserDefaults.standard.object(forKey:"Score") as? Int
@@ -222,7 +212,7 @@ class SingleViewController: UIViewController {
                 computerScoreLbl.text = String((Int(computerScoreLbl.text ?? "0") ?? 0) + 1)
                 
                 winLbl.text = "Computer has won!"
-              //  Computer.text = playerScoreLbl
+                
                 
                 //UserDefaults.standard.set(computerTap, forKey: "Tap")
                 //let array = playerTap.map{$0.rawValue}

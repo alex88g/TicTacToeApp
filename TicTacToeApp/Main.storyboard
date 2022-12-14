@@ -44,7 +44,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bU6-YW-7tZ" kind="show" id="vT6-7H-3X9"/>
+                                    <action selector="multiBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vxv-rL-VYQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKs-fF-3pB">
@@ -56,7 +56,6 @@
                                 <state key="normal" title="Single player"/>
                                 <connections>
                                     <action selector="singleBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eH4-pY-pCa"/>
-                                    <segue destination="KRh-Rs-edq" kind="show" identifier="SingleiViewController" id="bfw-Rg-ba3"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.tictactoe-removebg-preview.png" translatesAutoresizingMaskIntoConstraints="NO" id="cIq-kn-16o">
@@ -100,8 +99,7 @@
         <!--Multi View Controller-->
         <scene sceneID="veE-tV-CgU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6hp-AU-Kbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController modalPresentationStyle="fullScreen" id="bU6-YW-7tZ" customClass="MultiViewController" customModule="TicTacToeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="multiPlayer" modalPresentationStyle="fullScreen" id="bU6-YW-7tZ" customClass="MultiViewController" customModule="TicTacToeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="36W-59-mPu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,6 +334,7 @@
                         <outlet property="turnLabel" destination="4TO-T5-Dny" id="PNO-3P-Q01"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hp-AU-Kbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664.8854961832061" y="595.77464788732402"/>
         </scene>
@@ -343,7 +342,7 @@
         <scene sceneID="2lC-x1-4OV">
             <objects>
                 <viewController storyboardIdentifier="singlePlayer" modalPresentationStyle="fullScreen" id="KRh-Rs-edq" customClass="SingleViewController" customModule="TicTacToeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="170-bJ-ZX2">
+                    <view key="view" contentMode="scaleToFill" id="170-bJ-ZX2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -379,7 +378,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-K5-NqD">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-K5-NqD">
                                 <rect key="frame" x="23" y="248.99999999999997" width="354" height="354.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eBY-pk-CFf">
