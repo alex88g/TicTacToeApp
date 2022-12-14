@@ -71,7 +71,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ged-JL-8IL" kind="presentation" modalPresentationStyle="fullScreen" id="sah-dY-BU9"/>
+                                    <action selector="resultBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ebi-sf-IPk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,7 +292,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="hgd-Hf-mAY"/>
+                                    <action selector="exitBtn2:" destination="bU6-YW-7tZ" eventType="touchUpInside" id="UGW-jF-mXt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TO-T5-Dny">
@@ -342,7 +342,7 @@
         <scene sceneID="2lC-x1-4OV">
             <objects>
                 <viewController storyboardIdentifier="singlePlayer" modalPresentationStyle="fullScreen" id="KRh-Rs-edq" customClass="SingleViewController" customModule="TicTacToeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="170-bJ-ZX2">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="170-bJ-ZX2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -378,7 +378,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-K5-NqD">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-K5-NqD">
                                 <rect key="frame" x="23" y="248.99999999999997" width="354" height="354.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eBY-pk-CFf">
@@ -484,7 +484,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="hjg-8Z-6r4"/>
+                                    <action selector="exitBtn:" destination="KRh-Rs-edq" eventType="touchUpInside" id="hvU-UU-2Fk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSd-Qu-bC4">
@@ -527,7 +527,7 @@
         <!--Result View Controller-->
         <scene sceneID="Qod-MZ-MGe">
             <objects>
-                <viewController id="Ged-JL-8IL" customClass="ResultViewController" customModule="TicTacToeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="statsGame" id="Ged-JL-8IL" customClass="ResultViewController" customModule="TicTacToeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="804-kW-r7x">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -588,7 +588,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="EeC-G0-5ga"/>
+                                    <action selector="exitBtn3:" destination="Ged-JL-8IL" eventType="touchUpInside" id="9GW-9h-QMQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -617,9 +617,6 @@
             <point key="canvasLocation" x="1612.9770992366412" y="112.67605633802818"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="hgd-Hf-mAY"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="exit-removebg-preview" width="488" height="511"/>
         <image name="exit-removebg-preview.png" width="488" height="511"/>

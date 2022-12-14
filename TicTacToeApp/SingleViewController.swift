@@ -87,18 +87,24 @@ class SingleViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tap)
         
-       // NSLog("\(Player)", CGFloat.pi)
-       // print("\(Player)")
+        //NSLog gör att man ser om koden körs
+       //NSLog("\(Player)", CGFloat.pi)
+       
     }
     
     @objc func squareClicked(_ sender: UITapGestureRecognizer) {
+        
+        //print gör att man ser om koden körs
         //print("Box: \(sender.name) was clicked")
         let selectedBox = getBox(from: sender.name ?? "")
         makeChoice(selectedBox)
         playerTap.append(Box(rawValue: sender.name!)!)
+        //Åberopning när spelare/användre har gjort val
         checkWin()
         
+        //Hastighet vid 0.5 sekunder
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            //Ner användare väljer den sista tillgängliga plats, denna metoden kommer vara upprörd och omedelbart kommer att crasha om vi inte använder guard metoden
             self.computer()
         }
         
@@ -115,12 +121,13 @@ class SingleViewController: UIViewController {
             }
         }
         
-    
+        // Här använder vi guard
         guard availableBoxes.count > 0 else { return}
         
         let randIndex = Int.random(in: 0 ..< availableSpaces.count)
         makeChoice(availableSpaces[randIndex])
         computerTap.append(availableBoxes[randIndex])
+        //Åberopning när datorn har gjort val
         checkWin()
         
     }
@@ -141,6 +148,8 @@ class SingleViewController: UIViewController {
     
     func checkWin() {
         var correct = [[Box]]()
+        
+        //Implementering av logiken
        
         // Horisontal Victory
         
@@ -172,13 +181,14 @@ class SingleViewController: UIViewController {
         
 
         
-        
+        //Implementering av spelare och datorn
         for valid in correct {
             let userMatch = playerTap.filter {valid.contains($0) }.count
             let computerMatch = computerTap.filter { valid.contains($0) }.count
          
-            
+            //Om spelare har vunnit
             if userMatch == valid.count {
+                //Varje gång spelaren vinner score ökar med ett
                 playerScoreLbl.text = String((Int(playerScoreLbl.text ?? "0") ?? 0) + 1)
                
                
@@ -187,7 +197,7 @@ class SingleViewController: UIViewController {
                 //Player.text = computerScoreLbl
                 //let array = playerTap.map{$0.rawValue}
                 
-                
+                //UserDefaults score sparas vid varje gång spelare/användare vinner
                 var array = UserDefaults.standard.object(forKey:"Score") as? Int
                 
                 Player = array!
@@ -197,18 +207,19 @@ class SingleViewController: UIViewController {
                 UserDefaults.standard.set(Player, forKey: "Score")
                 
                 
-
-                
                 
 //                NSLog("\(Player)", CGFloat.pi)
 //                NSLog("\(array)", CGFloat.pi)
 
-                
-                
-                
+                //åberopning
                 resetGame()
                 break
+                
+                //Annars datorn har vunnit
+                
             } else if computerMatch == valid.count {
+                
+                //Varje gång datorn vinner score ökar med ett
                 computerScoreLbl.text = String((Int(computerScoreLbl.text ?? "0") ?? 0) + 1)
                 
                 winLbl.text = "Computer has won!"
@@ -218,6 +229,7 @@ class SingleViewController: UIViewController {
                 //let array = playerTap.map{$0.rawValue}
                 //UserDefaults.standard.set(Computer, forKey: "Score")
                 
+                //UserDefaults score sparas vid varje gång datorn vinner
                 var array2 = UserDefaults.standard.object(forKey:"ComputerScore") as? Int
                 
                 Computer = array2!
@@ -226,13 +238,11 @@ class SingleViewController: UIViewController {
                
                 UserDefaults.standard.set(Computer, forKey: "ComputerScore")
                 
-                
-
-                
-                
-                
                 resetGame()
                 break
+                
+                //Om datorn och användaren spelar till 9 betyder att spelet är jämnt
+                
             } else if computerTap.count + playerTap.count == 9 {
                 
                 winLbl.text = " Draw "
@@ -249,13 +259,16 @@ class SingleViewController: UIViewController {
         }
         
     }
-    
+    // Implementering där spelet startas om
     func resetGame() {
         for name in Box.allCases {
             let box = getBox(from: name.rawValue)
             box.image = nil
         }
+        
+        // Starta om sista värde
         lastValue = "o"
+        // deklarering av val
         playerTap = []
         computerTap = []
         
@@ -286,6 +299,10 @@ class SingleViewController: UIViewController {
             
         
         }
+    }
+    //Animationen sker när användaren trycker på knappen tilbaka till menu
+    @IBAction func exitBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

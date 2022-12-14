@@ -81,7 +81,10 @@ class ResultViewController: UIViewController {
     }
     
     
-
+    @IBAction func exitBtn3(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
         
        

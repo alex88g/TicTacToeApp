@@ -21,11 +21,18 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func resultBtn(_ sender: UIButton) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "statsGame") as! ResultViewController
+        controller.modalTransitionStyle = .flipHorizontal
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
+        
+    }
     
     @IBAction func multiBtn(_ sender: UIButton) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "multiPlayer") as! MultiViewController
         controller.modalTransitionStyle = .flipHorizontal
-        //controller.modalPresentationStyle = .fullScreen
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
         
     }
@@ -36,7 +43,7 @@ class ViewController: UIViewController {
         let controller = storyboard?.instantiateViewController(withIdentifier: "singlePlayer") as! SingleViewController
         controller.playerName = nameField.text
         controller.modalTransitionStyle = .flipHorizontal
-        //controller.modalPresentationStyle = .fullScreen
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
         
     }

@@ -129,6 +129,8 @@ class MultiViewController: UIViewController {
     
     func checkWin(_ s :String) -> Bool {
         
+        //Implementering av logiken
+        
         // Horisontal Victory
         if box(a1, s) && box(a2, s) && box(a3, s) {
             
@@ -247,6 +249,10 @@ class MultiViewController: UIViewController {
             sender.isEnabled = false
             
         }
+    @IBAction func exitBtn2(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     }
 
         
