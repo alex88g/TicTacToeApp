@@ -9,7 +9,8 @@ import UIKit
 
 class MultiViewController: UIViewController {
     
-    // Enum grupp av värden som är relaterade dessutom renare kod
+    // EEnum groups of values that are related, also provide cleaner code
+    //You can use different types such as string, boolean but enum feels much easier
     enum Turn {
         case Nought
         case Cross
@@ -37,14 +38,16 @@ class MultiViewController: UIViewController {
     
     
     
-    
+    //This variable shows whose turn it is
     var firstTurn = Turn.Cross
     var currentTurn = Turn.Cross
     
     var Nought = "0"
     var Cross = "X"
+    //Here vi create a variable that is an array of the button
     var square = [UIButton]()
     
+    //Updates of score
     var noughtsScore = 0
     var crossesScore = 0
     
@@ -71,12 +74,14 @@ class MultiViewController: UIViewController {
         square.append(c3)
         
     }
-    
+    // Specific button that is pressed
     @IBAction func squareClicked(_ sender: UIButton) {
     
     
-   
+        //calling this function
         makeChoice(sender)
+        
+        //Shows in the label score when player one has won
         
         if checkWin(Cross) {
             
@@ -86,7 +91,7 @@ class MultiViewController: UIViewController {
             player1ScoreLbl.text = String((Int(player1ScoreLbl.text ?? "0") ?? 0) + 1)
             
            
-            
+            //User defaults check and saves the results
             var arrayPlayer1 = UserDefaults.standard.object(forKey:"ScorePlayer1") as? Int
             
             Player1 = arrayPlayer1!
@@ -99,6 +104,7 @@ class MultiViewController: UIViewController {
                     NSLog("\(arrayPlayer1)", CGFloat.pi)
            
         }
+        //Shows in the label score when player two has won
         
         if checkWin(Nought) {
             
@@ -120,16 +126,18 @@ class MultiViewController: UIViewController {
            
             NSLog("\(arrayPlayer2)", CGFloat.pi)
         }
+        
+        // Shows when it's a draw.
         if(loadSquare()) {
             
             result(title: "Draw")
             
         }
     }
-    
+    //Here you check who has won
     func checkWin(_ s :String) -> Bool {
         
-        //Implementering av logiken
+        //Implementation of the logic
         
         // Horisontal Victory
         if box(a1, s) && box(a2, s) && box(a3, s) {
@@ -177,14 +185,14 @@ class MultiViewController: UIViewController {
     }
     return false
     
-}
+}   //Here returns boolean, if button x are true
     func box(_ button: UIButton, _ symbol: String) -> Bool {
         
         return button.title(for: .normal) == symbol
     }
     
     func result(title: String) {
-        
+        //Updates of the score, then the game is restarted
         let message = "\nNoughts" + String(noughtsScore) + "\n\nCrosses " + String(crossesScore)
         let ac = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
@@ -214,7 +222,7 @@ class MultiViewController: UIViewController {
         }
     currentTurn = firstTurn
 }
- 
+    
     func loadSquare() -> Bool {
        
         for button in square {
@@ -245,10 +253,11 @@ class MultiViewController: UIViewController {
                     turnLabel.text = Nought                }
                 
             }
-            
+            //When button is pressed it shows animation
             sender.isEnabled = false
             
         }
+    //Here shows horisontal animation when button is pressed
     @IBAction func exitBtn2(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

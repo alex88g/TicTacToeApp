@@ -52,7 +52,7 @@ class SingleViewController: UIViewController {
         
         
         
-        // Ytterligare inställningar efter vyns laddning.
+        //Additional settings after the view loads.
         
         
         playerNameLbl.text = playerName + ":"
@@ -76,10 +76,11 @@ class SingleViewController: UIViewController {
     
 
     
-    // Enum grupp av värden som är relaterade dessutom renare kod
+   
     enum Box: String, CaseIterable {
         case one, two, three, four, five, six, seven,eight, nine
-        }
+       
+    }
 
     func createTap(on imageView: UIImageView, type box: Box) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.squareClicked(_:)))
@@ -87,24 +88,24 @@ class SingleViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tap)
         
-        //NSLog gör att man ser om koden körs
+        //NSLog makes sure that code is visible while operating program
        //NSLog("\(Player)", CGFloat.pi)
        
     }
     
     @objc func squareClicked(_ sender: UITapGestureRecognizer) {
         
-        //print gör att man ser om koden körs
+        
         //print("Box: \(sender.name) was clicked")
         let selectedBox = getBox(from: sender.name ?? "")
         makeChoice(selectedBox)
         playerTap.append(Box(rawValue: sender.name!)!)
-        //Åberopning när spelare/användre har gjort val
+        //Here you call the function if user has made a choise
         checkWin()
         
-        //Hastighet vid 0.5 sekunder
+        //shows speed in 0.5 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            //Ner användare väljer den sista tillgängliga plats, denna metoden kommer vara upprörd och omedelbart kommer att crasha om vi inte använder guard metoden
+            //When the user select the last available location, this metod vill be triggered and vill immediately crash if we do not use the guard metod
             self.computer()
         }
         
@@ -121,7 +122,7 @@ class SingleViewController: UIViewController {
             }
         }
         
-        // Här använder vi guard
+        //The guard metod is used here
         guard availableBoxes.count > 0 else { return}
         
         let randIndex = Int.random(in: 0 ..< availableSpaces.count)
@@ -145,11 +146,11 @@ class SingleViewController: UIViewController {
         }
         
     }
-    
+    //Here we implement the function för random index
     func checkWin() {
         var correct = [[Box]]()
         
-        //Implementering av logiken
+        //Implementation of the logic
        
         // Horisontal Victory
         
@@ -181,12 +182,12 @@ class SingleViewController: UIViewController {
         
 
         
-        //Implementering av spelare och datorn
+        //implementation of player and computer
         for valid in correct {
             let userMatch = playerTap.filter {valid.contains($0) }.count
             let computerMatch = computerTap.filter { valid.contains($0) }.count
          
-            //Om spelare har vunnit
+            //Shows if player has won and score
             if userMatch == valid.count {
                 //Varje gång spelaren vinner score ökar med ett
                 playerScoreLbl.text = String((Int(playerScoreLbl.text ?? "0") ?? 0) + 1)
@@ -197,7 +198,7 @@ class SingleViewController: UIViewController {
                 //Player.text = computerScoreLbl
                 //let array = playerTap.map{$0.rawValue}
                 
-                //UserDefaults score sparas vid varje gång spelare/användare vinner
+                //User defaults check and saves the results
                 var array = UserDefaults.standard.object(forKey:"Score") as? Int
                 
                 Player = array!
@@ -211,11 +212,11 @@ class SingleViewController: UIViewController {
 //                NSLog("\(Player)", CGFloat.pi)
 //                NSLog("\(array)", CGFloat.pi)
 
-                //åberopning
+                //caling the function
                 resetGame()
                 break
                 
-                //Annars datorn har vunnit
+                //Shows if computer won and score
                 
             } else if computerMatch == valid.count {
                 
@@ -229,7 +230,7 @@ class SingleViewController: UIViewController {
                 //let array = playerTap.map{$0.rawValue}
                 //UserDefaults.standard.set(Computer, forKey: "Score")
                 
-                //UserDefaults score sparas vid varje gång datorn vinner
+                //User defaults check and saves the results
                 var array2 = UserDefaults.standard.object(forKey:"ComputerScore") as? Int
                 
                 Computer = array2!
@@ -241,7 +242,7 @@ class SingleViewController: UIViewController {
                 resetGame()
                 break
                 
-                //Om datorn och användaren spelar till 9 betyder att spelet är jämnt
+                //Shows when it's draw
                 
             } else if computerTap.count + playerTap.count == 9 {
                 
@@ -259,16 +260,15 @@ class SingleViewController: UIViewController {
         }
         
     }
-    // Implementering där spelet startas om
+    // Implementation where the game is restarted
     func resetGame() {
         for name in Box.allCases {
             let box = getBox(from: name.rawValue)
             box.image = nil
         }
         
-        // Starta om sista värde
+        // Restart last value
         lastValue = "o"
-        // deklarering av val
         playerTap = []
         computerTap = []
         
@@ -300,7 +300,7 @@ class SingleViewController: UIViewController {
         
         }
     }
-    //Animationen sker när användaren trycker på knappen tilbaka till menu
+    //Animationen occours when the user presses the exit button to menu
     @IBAction func exitBtn(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

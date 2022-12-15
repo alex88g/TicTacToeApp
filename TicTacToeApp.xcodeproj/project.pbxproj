@@ -18,12 +18,12 @@
 		F020F27A293E1FE3002B4EC5 /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020F279293E1FE3002B4EC5 /* SingleViewController.swift */; };
 		F020F284293E4E1E002B4EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F020F283293E4E1E002B4EC5 /* Main.storyboard */; };
 		F020F2D0293F849F002B4EC5 /* MultiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020F2CF293F849F002B4EC5 /* MultiViewController.swift */; };
-		F0D7AF41294A67CF00CCD991 /* wood_bc.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF40294A67CF00CCD991 /* wood_bc.jpeg */; };
-		F0D7AF43294A67D600CCD991 /* tictacback.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF42294A67D600CCD991 /* tictacback.png */; };
-		F0D7AF45294A67E300CCD991 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF44294A67E300CCD991 /* o.png */; };
-		F0D7AF47294A67F100CCD991 /* x-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF46294A67F100CCD991 /* x-removebg-preview.png */; };
-		F0D7AF49294A680400CCD991 /* logo.tictactoe-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF48294A680400CCD991 /* logo.tictactoe-removebg-preview.png */; };
-		F0D7AF4B294A681800CCD991 /* exit-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF4A294A681800CCD991 /* exit-removebg-preview.png */; };
+		F0D7AF4D294A9ED300CCD991 /* tictacback.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF4C294A9ED300CCD991 /* tictacback.png */; };
+		F0D7AF4F294A9EDE00CCD991 /* wood_bc.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF4E294A9EDE00CCD991 /* wood_bc.jpeg */; };
+		F0D7AF51294A9EE600CCD991 /* exit-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF50294A9EE500CCD991 /* exit-removebg-preview.png */; };
+		F0D7AF53294A9EEC00CCD991 /* x-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF52294A9EEC00CCD991 /* x-removebg-preview.png */; };
+		F0D7AF55294A9EF300CCD991 /* 0-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF54294A9EF300CCD991 /* 0-removebg-preview.png */; };
+		F0D7AF57294A9EFB00CCD991 /* logo.tictactoe-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7AF56294A9EFB00CCD991 /* logo.tictactoe-removebg-preview.png */; };
 		F0FEF4912948C198000F0A00 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF4902948C198000F0A00 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +60,12 @@
 		F020F279293E1FE3002B4EC5 /* SingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewController.swift; sourceTree = "<group>"; };
 		F020F283293E4E1E002B4EC5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F020F2CF293F849F002B4EC5 /* MultiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewController.swift; sourceTree = "<group>"; };
-		F0D7AF40294A67CF00CCD991 /* wood_bc.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wood_bc.jpeg; path = ../../../Downloads/wood_bc.jpeg; sourceTree = "<group>"; };
-		F0D7AF42294A67D600CCD991 /* tictacback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tictacback.png; path = ../../../Downloads/tictacback.png; sourceTree = "<group>"; };
-		F0D7AF44294A67E300CCD991 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = o.png; path = ../../../Downloads/o.png; sourceTree = "<group>"; };
-		F0D7AF46294A67F100CCD991 /* x-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-removebg-preview.png"; path = "../../../Downloads/x-removebg-preview.png"; sourceTree = "<group>"; };
-		F0D7AF48294A680400CCD991 /* logo.tictactoe-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo.tictactoe-removebg-preview.png"; path = "../../../Downloads/logo.tictactoe-removebg-preview.png"; sourceTree = "<group>"; };
-		F0D7AF4A294A681800CCD991 /* exit-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-removebg-preview.png"; path = "../../../Downloads/exit-removebg-preview.png"; sourceTree = "<group>"; };
+		F0D7AF4C294A9ED300CCD991 /* tictacback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tictacback.png; path = ../../../../Downloads/tictacback.png; sourceTree = "<group>"; };
+		F0D7AF4E294A9EDE00CCD991 /* wood_bc.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wood_bc.jpeg; path = ../../../../Downloads/wood_bc.jpeg; sourceTree = "<group>"; };
+		F0D7AF50294A9EE500CCD991 /* exit-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "exit-removebg-preview.png"; path = "../../../../Downloads/exit-removebg-preview.png"; sourceTree = "<group>"; };
+		F0D7AF52294A9EEC00CCD991 /* x-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-removebg-preview.png"; path = "../../../../Downloads/x-removebg-preview.png"; sourceTree = "<group>"; };
+		F0D7AF54294A9EF300CCD991 /* 0-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "0-removebg-preview.png"; path = "../../../../Downloads/0-removebg-preview.png"; sourceTree = "<group>"; };
+		F0D7AF56294A9EFB00CCD991 /* logo.tictactoe-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo.tictactoe-removebg-preview.png"; path = "../../../../Downloads/logo.tictactoe-removebg-preview.png"; sourceTree = "<group>"; };
 		F0FEF4902948C198000F0A00 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,12 +126,12 @@
 				F020F2CF293F849F002B4EC5 /* MultiViewController.swift */,
 				F020F279293E1FE3002B4EC5 /* SingleViewController.swift */,
 				F00617A7293AC3DF0073BE68 /* Assets.xcassets */,
-				F0D7AF42294A67D600CCD991 /* tictacback.png */,
-				F0D7AF48294A680400CCD991 /* logo.tictactoe-removebg-preview.png */,
-				F0D7AF4A294A681800CCD991 /* exit-removebg-preview.png */,
-				F0D7AF40294A67CF00CCD991 /* wood_bc.jpeg */,
-				F0D7AF44294A67E300CCD991 /* o.png */,
-				F0D7AF46294A67F100CCD991 /* x-removebg-preview.png */,
+				F0D7AF4E294A9EDE00CCD991 /* wood_bc.jpeg */,
+				F0D7AF54294A9EF300CCD991 /* 0-removebg-preview.png */,
+				F0D7AF56294A9EFB00CCD991 /* logo.tictactoe-removebg-preview.png */,
+				F0D7AF4C294A9ED300CCD991 /* tictacback.png */,
+				F0D7AF52294A9EEC00CCD991 /* x-removebg-preview.png */,
+				F0D7AF50294A9EE500CCD991 /* exit-removebg-preview.png */,
 				F00617A9293AC3DF0073BE68 /* LaunchScreen.storyboard */,
 				F00617AC293AC3DF0073BE68 /* Info.plist */,
 			);
@@ -260,14 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F020F284293E4E1E002B4EC5 /* Main.storyboard in Resources */,
-				F0D7AF4B294A681800CCD991 /* exit-removebg-preview.png in Resources */,
+				F0D7AF51294A9EE600CCD991 /* exit-removebg-preview.png in Resources */,
+				F0D7AF4F294A9EDE00CCD991 /* wood_bc.jpeg in Resources */,
 				F00617AB293AC3DF0073BE68 /* LaunchScreen.storyboard in Resources */,
-				F0D7AF45294A67E300CCD991 /* o.png in Resources */,
-				F0D7AF43294A67D600CCD991 /* tictacback.png in Resources */,
-				F0D7AF49294A680400CCD991 /* logo.tictactoe-removebg-preview.png in Resources */,
-				F0D7AF47294A67F100CCD991 /* x-removebg-preview.png in Resources */,
+				F0D7AF53294A9EEC00CCD991 /* x-removebg-preview.png in Resources */,
+				F0D7AF55294A9EF300CCD991 /* 0-removebg-preview.png in Resources */,
+				F0D7AF4D294A9ED300CCD991 /* tictacback.png in Resources */,
 				F00617A8293AC3DF0073BE68 /* Assets.xcassets in Resources */,
-				F0D7AF41294A67CF00CCD991 /* wood_bc.jpeg in Resources */,
+				F0D7AF57294A9EFB00CCD991 /* logo.tictactoe-removebg-preview.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
