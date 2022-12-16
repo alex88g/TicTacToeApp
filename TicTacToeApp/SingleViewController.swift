@@ -128,7 +128,7 @@ class SingleViewController: UIViewController {
         let randIndex = Int.random(in: 0 ..< availableSpaces.count)
         makeChoice(availableSpaces[randIndex])
         computerTap.append(availableBoxes[randIndex])
-        //Åberopning när datorn har gjort val
+        //calling when computer has made choice
         checkWin()
         
     }
@@ -189,7 +189,7 @@ class SingleViewController: UIViewController {
          
             //Shows if player has won and score
             if userMatch == valid.count {
-                //Varje gång spelaren vinner score ökar med ett
+                //Every time computer wins score increase with one
                 playerScoreLbl.text = String((Int(playerScoreLbl.text ?? "0") ?? 0) + 1)
                
                
@@ -220,7 +220,7 @@ class SingleViewController: UIViewController {
                 
             } else if computerMatch == valid.count {
                 
-                //Varje gång datorn vinner score ökar med ett
+                //Every time computer wins score increase with one
                 computerScoreLbl.text = String((Int(computerScoreLbl.text ?? "0") ?? 0) + 1)
                 
                 winLbl.text = "Computer has won!"
